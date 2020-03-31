@@ -51,7 +51,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
 document.querySelector('.btn-hold').addEventListener('click', function () {
 
     //add current score to the global score
-    debugger
+    // debugger
     scores[activePlayer] += roundScore
 
     //update the UI
@@ -61,6 +61,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     if (scores[activePlayer] >= 20) {
         document.querySelector('#name-' + activePlayer).textContent = 'WINNER'
         document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
     } else {
         nextPlayer();
     }
